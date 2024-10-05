@@ -21,3 +21,22 @@ describe('CalculadoraComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+describe('Cancatenar numero', function () { 
+  let component: CalculadoraComponent; 
+  beforeEach(() => { 
+  component = new CalculadoraComponent(); 
+  }); 
+  it("concatenar 2 + 5 = 25", function() { 
+  expect(component.concatenarNumero("2","5")).toBe("25"); 
+  }); 
+  it("concatenar Vacío + . = 0.", function() { 
+  expect(component.concatenarNumero("",".")).toBe("0."); 
+  }); 
+  it("concatenar Decimal 5. + 5 = 5.5", function() { 
+  expect(component.concatenarNumero("5.","5")).toBe("5.5"); 
+  }); 
+  it("concatenar Más de un punto 5.5 + . = 5.5", function() { 
+  expect(component.concatenarNumero("5.5",".")).toBe("5.5"); 
+  }); 
+  }); 
